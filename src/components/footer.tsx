@@ -1,11 +1,10 @@
-import React from "react";
+import React from 'react';
 
 export function Footer() {
     return (
-        <footer className="text-center">
-            <p className="text-black dark:text-white">
-                © 2024 LimaDeveloper.com All rights reserved. This media is under exclusive right to its creators.
-            </p>
+        <footer className={'text-center text-black dark:text-white'}>
+            <p>&copy; 2023 LimaDeveloper. Licensed under the MIT License.</p>
+            <p>See <a href="LICENSE">LICENSE</a> for details.</p>
         </footer>
     )
 }
