@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 
-import {InstagraFeed} from './Themes/Instagra/instagrafeed.tsx';
-import {ZapZapFeed} from './Themes/ZapZap/zapzapfeed.tsx';
+import {InstagraFeed} from './themes/instagra/instagrafeed.tsx';
+import {ZapZapFeed} from './themes/zapzap/zapzapfeed.tsx';
 
 function getTheme(theme: string) {
     switch (theme) {
