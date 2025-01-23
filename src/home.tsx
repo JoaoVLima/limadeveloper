@@ -13,11 +13,11 @@ function getTheme(theme: string) {
 }
 
 export function Home() {
-    const [theme, setTheme] = useState('instagra');
+    const [theme, setTheme] = useState('zapzap');
 
     return (
         <>
-            <div className="flex justify-center space-x-4 mb-8">
+            <div className='flex justify-center space-x-4 mb-8'>
                 <button
                     onClick={() => setTheme('instagra')}
                     className={`px-4 py-2 rounded-lg ${theme === 'instagra' ? 'bg-gradient-to-r from-yellow-400 to-pink-500 text-white' : 'bg-gray-200'}`}
