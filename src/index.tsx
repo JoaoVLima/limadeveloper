@@ -3,7 +3,7 @@ import {StrictMode} from 'react';
 import {createRoot} from 'react-dom/client';
 
 import './style.css'
-import {Home} from './home/home.tsx';
+import {Home} from './home.tsx';
 
 function init() {
     const home = document.getElementById('home') as HTMLDivElement;
