@@ -1,9 +1,11 @@
 import React, {useState} from 'react';
 
+import {Footer} from './components/footer.tsx';
+
 import {InstagraFeed} from './themes/instagra/instagrafeed.tsx';
 import {ZapZapFeed} from './themes/zapzap/zapzapfeed.tsx';
 
-function getTheme(theme: string) {
+function getThemedFeed(theme: string) {
     switch (theme) {
         case 'instagra':
             return <InstagraFeed/>;
@@ -17,7 +19,8 @@ export function Home() {
 
     return (
         <>
-            <div className='flex justify-center space-x-4 mb-8'>
+            {getThemedFeed(theme)}
+            <div className='flex justify-center'>
                 <button
                     onClick={() => setTheme('instagra')}
                     className={`px-4 py-2 rounded-lg ${theme === 'instagra' ? 'bg-gradient-to-r from-yellow-400 to-pink-500 text-white' : 'bg-gray-200'}`}
@@ -31,7 +34,7 @@ export function Home() {
                     ZapZap
                 </button>
             </div>
-            {getTheme(theme)}
+            <Footer/>
         </>
     );
 }
