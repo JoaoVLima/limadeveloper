@@ -20,21 +20,21 @@ export function Home() {
     return (
         <>
             {getThemedFeed(theme)}
-            <div className='flex justify-center'>
-                <button
-                    onClick={() => setTheme('instagra')}
-                    className={`px-4 py-2 rounded-lg ${theme === 'instagra' ? 'bg-gradient-to-r from-yellow-400 to-pink-500 text-white' : 'bg-gray-200'}`}
-                >
-                    Instagrã
-                </button>
-                <button
-                    onClick={() => setTheme('zapzap')}
-                    className={`px-4 py-2 rounded-lg ${theme === 'zapzap' ? 'bg-[#25D366] text-white' : 'bg-gray-200'}`}
-                >
-                    ZapZap
-                </button>
-            </div>
-            <Footer/>
+            {/*<div className='flex justify-center'>*/}
+            {/*    <button*/}
+            {/*        onClick={() => setTheme('instagra')}*/}
+            {/*        className={`px-4 py-2 rounded-lg ${theme === 'instagra' ? 'bg-gradient-to-r from-yellow-400 to-pink-500 text-white' : 'bg-gray-200'}`}*/}
+            {/*    >*/}
+            {/*        Instagrã*/}
+            {/*    </button>*/}
+            {/*    <button*/}
+            {/*        onClick={() => setTheme('zapzap')}*/}
+            {/*        className={`px-4 py-2 rounded-lg ${theme === 'zapzap' ? 'bg-[#25D366] text-white' : 'bg-gray-200'}`}*/}
+            {/*    >*/}
+            {/*        ZapZap*/}
+            {/*    </button>*/}
+            {/*</div>*/}
+            {/*<Footer/>*/}
         </>
     );
 }
