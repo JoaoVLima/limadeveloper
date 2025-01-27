@@ -3,17 +3,20 @@ import React from "react";
 export function Header() {
     return (
         <>
-            <header className={'bg-amber-300 w-full px-2 py-2'}>
-                <nav className={'bg-green-300 w-full fixed mx-auto'}>
-                    saf
+            <header className={'w-full h-12 fixed p-4'}>
+                <nav>
+                    <ol className={'flex flex-row overflow-hidden truncate'}>
+                        <li className={'basis-1/3 flex flex-row items-center justify-start'}>
+                            <h1 className={'text-green-500 text-2xl'}>ZapZap</h1>
+                        </li>
+                        <li className={'basis-2/3'}>
+                            <ol className={'flex flex-row items-center justify-end gap-6'}>
+                                <li>📷</li>
+                                <li className={'font-black [writing-mode:vertical-lr]'}>...</li>
+                            </ol>
+                        </li>
+                    </ol>
                 </nav>
-                <search>
-                    <form action="./search/">
-                        <label htmlFor="movie">Find a Movie</label>
-                        <input type="search" id="movie" name="q"/>
-                        <button type="submit">Search</button>
-                    </form>
-                </search>
             </header>
             <br/>
             <br/>
