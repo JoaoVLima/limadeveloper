@@ -16,12 +16,12 @@ interface ThemeProviderProps {
 
 export function ThemeProvider({ children }: ThemeProviderProps) {
     // Pega o tema do localStorage
-    const storedTheme = localStorage.getItem('theme') || 'zapzap';
+    const storedTheme = sessionStorage.getItem('theme') || 'zapzap';
     const [theme, setTheme] = useState<string>(storedTheme);
 
     // Salva o tema no localStorage quando mudar
     useEffect(() => {
-        localStorage.setItem('theme', theme);
+        sessionStorage.setItem('theme', theme);
     }, [theme]);
 
     return (
