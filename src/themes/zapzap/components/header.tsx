@@ -1,13 +1,21 @@
 import React from "react";
 
+import {useTheme} from '../../../context.tsx';
+
 export function Header() {
+    const {theme, setTheme} = useTheme();
+
     return (
         <>
-            <header className={'w-full h-12 fixed p-4'}>
+            <header className={'w-full select-none h-12 fixed p-4'}>
                 <nav>
-                    <ol className={'flex flex-row overflow-hidden truncate'}>
+                    <ul className={'flex flex-row overflow-hidden truncate'}>
                         <li className={'basis-1/3 flex flex-row items-center justify-start'}>
-                            <h1 className={'text-green-500 text-2xl'}>ZapZap</h1>
+                            <select className={'text-green-500 text-2xl bg-white'}
+                                    onChange={(e) => setTheme(e.target.value)}>
+                                <option value="zapzap" selected>ZapZap</option>
+                                <option value="instagra">Instagrã</option>
+                            </select>
                         </li>
                         <li className={'basis-2/3'}>
                             <ol className={'flex flex-row items-center justify-end gap-6'}>
@@ -15,57 +23,9 @@ export function Header() {
                                 <li className={'font-black [writing-mode:vertical-lr]'}>...</li>
                             </ol>
                         </li>
-                    </ol>
+                    </ul>
                 </nav>
             </header>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
         </>
     )
 }

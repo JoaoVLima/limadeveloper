@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Dispatch} from 'react';
 import postsData from '../../data/posts.json';
 import {Header} from "./components/header.tsx";
 

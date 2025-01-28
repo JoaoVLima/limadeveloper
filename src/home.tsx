@@ -2,6 +2,8 @@ import React, {useState} from 'react';
 
 import {Footer} from './components/footer.tsx';
 
+import {useTheme} from './context.tsx';
+
 import {InstagraFeed} from './themes/instagra/instagrafeed.tsx';
 import {ZapZapFeed} from './themes/zapzap/zapzapfeed.tsx';
 
@@ -15,7 +17,7 @@ function getThemedFeed(theme: string) {
 }
 
 export function Home() {
-    const [theme, setTheme] = useState('zapzap');
+    const {theme, setTheme} = useTheme();
 
     return (
         <>
