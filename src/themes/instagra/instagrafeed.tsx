@@ -6,23 +6,23 @@ export function InstagraFeed() {
     return (
         <>
             <Header/>
-            <div className='max-w-2xl mx-auto p-4 space-y-6'>
+            <div className='mx-auto max-w-2xl p-4 space-y-6'>
                 {postsData.posts.map((post) => (
-                    <div key={post.id} className='bg-white border border-gray-200 rounded-lg shadow-sm'>
-                        <div className='p-4 flex items-center space-x-3'>
-                            <div className='w-10 h-10 rounded-full bg-gradient-to-tr from-yellow-400 to-fuchsia-600 p-0.5'>
-                                <div className='w-full h-full rounded-full bg-white p-0.5'>
+                    <div key={post.id} className='rounded-lg border border-gray-200 bg-white shadow-sm'>
+                        <div className='flex items-center p-4 space-x-3'>
+                            <div className='h-10 w-10 rounded-full bg-gradient-to-tr from-yellow-400 to-fuchsia-600 p-0.5'>
+                                <div className='h-full w-full rounded-full bg-white p-0.5'>
                                     <img
                                         src={`https://ui-avatars.com/api/?name=${post.author}&background=random`}
                                         alt={post.author}
-                                        className='w-full h-full rounded-full'
+                                        className='h-full w-full rounded-full'
                                     />
                                 </div>
                             </div>
                             <span className='font-semibold'>{post.author}</span>
                         </div>
 
-                        <img src={post.image} alt='Post content' className='w-full aspect-square object-cover' />
+                        <img src={post.image} alt='Post content' className='aspect-square w-full object-cover' />
 
                         <div className='p-4 space-y-3'>
                             <div className='flex space-x-4'>
@@ -41,10 +41,10 @@ export function InstagraFeed() {
                                 <span className='font-semibold'>{post.likes} likes</span>
                             </div>
                             <div>
-                                <span className='font-semibold mr-2'>{post.author}</span>
+                                <span className='mr-2 font-semibold'>{post.author}</span>
                                 <span>{post.content}</span>
                             </div>
-                            <div className='text-gray-500 text-sm'>
+                            <div className='text-sm text-gray-500'>
                                 {new Date(post.timestamp).toLocaleDateString()}
                             </div>
                         </div>
