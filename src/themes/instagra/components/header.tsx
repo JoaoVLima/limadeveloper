@@ -11,10 +11,10 @@ export function Header() {
                 <nav>
                     <ul className={'flex flex-row overflow-hidden truncate'}>
                         <li className={'basis-1/3 flex flex-row items-center justify-start'}>
-                            <select className={'text-green-500 dark:text-white text-2xl bg-white dark:bg-black'}
+                            <select className={'text-black dark:text-white text-2xl bg-white dark:bg-black'}
                                     onChange={(e) => setTheme(e.target.value)}>
-                                <option value="zapzap" selected>ZapZap</option>
-                                <option value="instagra">Instagrã</option>
+                                <option value="instagra" selected>Instagrã</option>
+                                <option value="zapzap">ZapZap</option>
                             </select>
                         </li>
                         <li className={'basis-2/3'}>
