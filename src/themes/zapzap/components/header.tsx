@@ -7,14 +7,14 @@ export function Header() {
 
     return (
         <>
-            <header className={'w-full select-none h-12 fixed p-4'}>
+            <header className={'w-full select-none h-12 fixed p-4 text-black dark:text-white bg-white dark:bg-black'}>
                 <nav>
                     <ul className={'flex flex-row overflow-hidden truncate'}>
                         <li className={'basis-1/3 flex flex-row items-center justify-start'}>
-                            <select className={'text-green-500 dark:text-white text-2xl bg-white dark:bg-black'}
+                            <select className={'text-green-500 text-2xl bg-inherit'}
                                     onChange={(e) => setTheme(e.target.value)}>
-                                <option value="zapzap" selected>ZapZap</option>
-                                <option value="instagra">Instagrã</option>
+                                <option value="zapzap" selected><h1>ZapZap</h1></option>
+                                <option value="instagra"><h1>Instagrã</h1></option>
                             </select>
                         </li>
                         <li className={'basis-2/3'}>

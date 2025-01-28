@@ -1,13 +1,33 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:slnt,wght@-10..0,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Style+Script&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-h1,h2,h3{
-    font-family: "Inter", sans-serif;
+body{
+    font-family: "Inter", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
 }
-h4,h5,h6, p{
-    font-family: "Bree Serif", serif;
+
+.inter {
+  font-family: "Inter", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.style-script {
+  font-family: "Style Script", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.bree-serif {
+  font-family: "Bree Serif", serif;
+  font-weight: 400;
+  font-style: normal;
 }
