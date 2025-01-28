@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, ReactNode, Dispatch, SetStateAction } from 'react';
+import React, { createContext, useContext, useState, ReactNode, Dispatch, SetStateAction, useEffect } from 'react';
 
 // Definir o tipo do contexto
 interface ThemeContextType {
@@ -15,7 +15,14 @@ interface ThemeProviderProps {
 }
 
 export function ThemeProvider({ children }: ThemeProviderProps) {
-    const [theme, setTheme] = useState<string>('zapzap');
+    // Pega o tema do localStorage
+    const storedTheme = localStorage.getItem('theme') || 'zapzap';
+    const [theme, setTheme] = useState<string>(storedTheme);
+
+    // Salva o tema no localStorage quando mudar
+    useEffect(() => {
+        localStorage.setItem('theme', theme);
+    }, [theme]);
 
     return (
         <ThemeContext.Provider value={{ theme, setTheme }}>
@@ -28,7 +35,7 @@ export function ThemeProvider({ children }: ThemeProviderProps) {
 export function useTheme(): ThemeContextType {
     const context = useContext(ThemeContext);
     if (!context) {
-        throw new Error('useTheme deve ser usado dentro de um ThemeProvider');
+        throw new Error('useTheme must be used within a ThemeProvider');
     }
     return context;
 }
