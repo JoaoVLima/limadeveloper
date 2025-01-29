@@ -6,7 +6,7 @@ export function Header() {
     const {theme, setTheme} = useTheme();
 
     return (
-        <header className={'w-full select-none h-12 fixed top-0 p-4 pt-2 text-black dark:text-white bg-white dark:bg-black'}>
+        <header className={'w-full select-none h-12 fixed top-0 px-4 py-2 text-black dark:text-white bg-white dark:bg-black'}>
             <nav>
                 <ul className={'flex flex-row overflow-hidden truncate'}>
                     <li className={'basis-1/3 flex flex-row items-center justify-start'}>
