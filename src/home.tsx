@@ -8,7 +8,7 @@ export function Home() {
     return (
         <>
             <ZapZapFeed/>
-            {/*<Footer/>*/}
+            <Footer/>
         </>
     );
 }
