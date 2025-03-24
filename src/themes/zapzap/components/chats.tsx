@@ -5,14 +5,18 @@ export function Chats() {
     return (
         <>
             <main className={'mt-12 flex flex-col gap-1'}>
-                <article className={'w-full px-4 py-2 h-16 flex flex-row gap-3 overflow-hidden truncate'}>
-                    <img className={'basis-1/12 rounded-full aspect-square'} src={'https://ui-avatars.com/api/?name=br&background=random'} alt={''}/>
-                    <section className={'basis-10/12 flex flex-col overflow-hidden truncate'}>
-                        <h4 className={'text-inherit'}>GitHub</h4>
-                        <p className={'text-neutral-500 truncate'}>Projeto atualizado</p>
-                    </section>
-                    <time className={'basis-1/12 text-neutral-500'} dateTime="2025-01-28 19:00">Ontem</time>
-                </article>
+
+                {postsData.posts.map((post) => (
+                    <article className={'w-full px-4 py-2 h-16 flex flex-row gap-3 overflow-hidden truncate'}>
+                        <img className={'basis-1/12 rounded-full aspect-square'} src={'https://ui-avatars.com/api/?name=br&background=random'} alt={''}/>
+                        <section className={'basis-10/12 flex flex-col overflow-hidden truncate'}>
+                            <h4 className={'text-inherit'}>GitHub</h4>
+                            <p className={'text-neutral-500 truncate'}>Projeto atualizado</p>
+                        </section>
+                        <time className={'basis-1/12 text-neutral-500'} dateTime="2025-01-28 19:00">Ontem</time>
+                    </article>
+                ))}
+
 
                 {/*<div className='max-w-2xl mx-auto p-4 space-y-4 bg-[#efeae2]'>*/}
                 {/*    {postsData.posts.map((post) => (*/}
