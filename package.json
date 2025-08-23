@@ -1,41 +1,44 @@
 {
-    "name": "limadeveloper",
-    "version": "1.0.0",
-    "description": "LimaDeveloper website, developed with tailwindcss using typescript and vite.js",
-    "author": "JoaoVLima",
-    "contributors": [
-        "JoaoVLima <joao@limadeveloper.com>"
-    ],
-    "keywords": [
-        "LimaDeveloper",
-        "tailwindcss",
-        "typescript",
-        "vitejs"
-    ],
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/JoaoVLima/limadeveloper.git"
-    },
-    "license": "MIT",
-    "private": true,
-    "type": "module",
-    "main": "index.js",
-    "scripts": {
-        "dev": "vite",
-        "build": "tsc && vite build",
-        "preview": "vite preview",
-        "test": "echo \"Error: no test specified\" && exit 1"
-    },
-    "dependencies": {
-        "@types/react": "^19.0.7",
-        "@types/react-dom": "^19.0.3",
-        "@vercel/speed-insights": "^1.2.0",
-        "autoprefixer": "^10.4.20",
-        "postcss": "^8.5.1",
-        "react": "^19.0.0",
-        "react-dom": "^19.0.0",
-        "tailwindcss": "^3.4.17",
-        "typescript": "^5.7.3",
-        "vite": "^6.0.11"
-    }
+  "name": "limadeveloper",
+  "version": "1.0.0",
+  "description": "LimaDeveloper website, developed with React + TypeScript + Vite + ThreeJS(React Three Fiber)",
+  "author": "JoaoVLima",
+  "contributors": [
+    "JoaoVLima <joao@limadeveloper.com>"
+  ],
+  "keywords": [
+    "LimaDeveloper",
+    "tailwindcss",
+    "typescript",
+    "vitejs"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JoaoVLima/limadeveloper.git"
+  },
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "lint": "eslint .",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.33.0",
+    "@types/react": "^19.1.10",
+    "@types/react-dom": "^19.1.7",
+    "@vitejs/plugin-react": "^5.0.0",
+    "eslint": "^9.33.0",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "eslint-plugin-react-refresh": "^0.4.20",
+    "globals": "^16.3.0",
+    "typescript": "~5.8.3",
+    "typescript-eslint": "^8.39.1",
+    "vite": "^7.1.2"
+  }
 }
