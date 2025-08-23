@@ -19,11 +19,13 @@ i18n
     .init({
         // lng: 'en',
         fallbackLng: 'en',
+        load: 'languageOnly',
 
-        debug: true,
+        debug: false,
 
         ns: ['landing_page'],
         defaultNS: 'landing_page',
+        fallbackNS: 'landing_page',
         backend: {
             loadPath: '/locales/{{lng}}/{{ns}}.json'
         },
