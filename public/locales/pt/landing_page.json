@@ -1,0 +1,20 @@
+{
+  "header": {
+    "h1": "João Lima",
+    "p": "oi"
+  },
+  "subtitle": "Engenheiro de Software | Django • Python • Java • PostgreSQL • NodeJS • React",
+  "aboutTitle": "Sobre Mim",
+  "aboutText": "Sou João Victor de Lima, engenheiro de software com mais de 4 anos de experiência em desenvolvimento backend e frontend. Tenho forte atuação em Django, React, Java, PostgreSQL e integrações via APIs REST. Também possuo experiência com NodeJS, ETL (Pentaho) e ambientes Linux. Atualmente, venho me aprofundando em microserviços, CI/CD e soluções em nuvem (AWS/GCP).",
+  "skillsTitle": "Competências Técnicas",
+  "experienceTitle": "Experiência",
+  "ravproTitle": "Engenheiro de Software - Ravpro (2024 - 2025)",
+  "ravproDesc": "Desenvolvimento de features backend e frontend para o RavMenu Web. Integrações de sistemas, pipelines ETL e suporte a plataformas de Business Intelligence. Stack: React, NodeJS, Python, PostgreSQL, MongoDB, Pentaho.",
+  "inteligTitle": "Desenvolvedor Back-End - Inteliger (2021 - 2023)",
+  "inteligDesc": "Atuei em mais de 10 projetos, incluindo integrações de pagamento, terceirização de entregas e desenvolvimento da plataforma omnichannel Venda Mais(Voai). Stack: Python, Django, PostgreSQL, Redis, GCP, Pentaho.",
+  "fidentechTitle": "Desenvolvedor Frontend - FidenTech (2025)",
+  "fidentechDesc": "Criação e manutenção de aplicações web com Oracle APEX, JavaScript, HTML e CSS, entregando interfaces responsivas e amigáveis.",
+  "educationTitle": "Formação Acadêmica",
+  "educationDesc": "Bacharelado em Ciência da Computação - Pontifícia Universidade Católica do Paraná (2019 - 2025)",
+  "contactTitle": "Contato"
+}
