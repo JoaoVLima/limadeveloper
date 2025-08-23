@@ -16,7 +16,7 @@
     "type": "git",
     "url": "https://github.com/JoaoVLima/limadeveloper.git"
   },
-  "private": true,
+  "private": false,
   "type": "module",
   "scripts": {
     "dev": "vite",
