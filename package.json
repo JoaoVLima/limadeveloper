@@ -1,6 +1,6 @@
 {
   "name": "limadeveloper",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "LimaDeveloper website, developed with React + TypeScript + Vite + ThreeJS(React Three Fiber)",
   "author": "JoaoVLima",
   "contributors": [
