@@ -1,8 +1,5 @@
-import { Suspense } from 'react';
+import {Suspense} from 'react';
 import { useTranslation } from 'react-i18next';
-import { Canvas } from "@react-three/fiber";
-import { OrbitControls } from "@react-three/drei";
-import Box from "./Box.tsx";
 
 function App() {
     const { t } = useTranslation('landing_page');
@@ -15,28 +12,6 @@ function App() {
                 <h1 className="text-4xl font-extrabold">{t("header.h1")}</h1>
                 <p className="text-lg text-gray-400">{t("header.p")}</p>
             </header>
-
-            {/* Hero Section with 3D */}
-            <section className="relative flex-1">
-                <Canvas className="h-[400px]">
-                    <ambientLight intensity={Math.PI / 2} />
-                    <spotLight
-                        position={[10, 10, 10]}
-                        angle={0.15}
-                        penumbra={1}
-                        decay={0}
-                        intensity={Math.PI}
-                    />
-                    <pointLight
-                        position={[-10, -10, -10]}
-                        decay={0}
-                        intensity={Math.PI}
-                    />
-                    <Box position={[-1.2, 0, 0]} />
-                    <Box position={[1.2, 0, 0]} />
-                    <OrbitControls />
-                </Canvas>
-            </section>
 
             {/* About Section */}
             <section className="p-8 max-w-3xl mx-auto text-center">
