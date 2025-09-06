@@ -1,9 +1,9 @@
-import { useTranslation } from "react-i18next";
+import { useTranslation } from 'react-i18next'
 
 function Window() {
-  const { t } = useTranslation("landing_page");
+    const { t } = useTranslation('landing_page')
 
-  return <>{t("window")}</>;
+    return <>{t('window')}</>
 }
 
-export default Window;
+export default Window
