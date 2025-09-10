@@ -14,11 +14,11 @@ function Header({ activeIndex }: HeaderProps) {
         day: 'numeric',    // e.g., 10
         hour: '2-digit',   // e.g., 08
         minute: '2-digit', // e.g., 34
-    })
+    }) // DateTime Fixed (doesnt update)
 
     return (
         <header className="sticky top-0 bg-black/50 z-50">
-            <nav className="mx-auto max-w-7xl">
+            <nav className="mx-auto px-4 max-w-7xl">
                 <ul className="flex flex-nowrap overflow-x-auto no-scrollbar select-none space-x-6 py-4 text-white font-medium items-center">
                     {/* OS Icon */}
                     <li className="flex-shrink-0 py-1 px-4 rounded-md">🌐</li>
