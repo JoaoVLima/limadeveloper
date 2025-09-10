@@ -31,7 +31,7 @@ function Header({ activeIndex }: HeaderProps) {
                                 ${
                                     index === activeIndex
                                         ? 'bg-neutral-700/50 text-white'
-                                        : 'bg-neutral-900/50 text-gray-300 hover:bg-neutral-700/40 hover:text-white'
+                                        : 'bg-neutral-900/50 text-neutral-300 hover:bg-neutral-700/40 hover:text-white'
                                 }`}
                         >
                             {item}
@@ -39,7 +39,7 @@ function Header({ activeIndex }: HeaderProps) {
                     ))}
 
                     {/* Date */}
-                    <li className="flex-shrink-0 py-1 px-4 rounded-md text-gray-300 ml-auto">
+                    <li className="flex-shrink-0 py-1 px-4 rounded-md bg-neutral-700/50 text-neutral-300 ml-auto">
                         {today}
                     </li>
                 </ul>
