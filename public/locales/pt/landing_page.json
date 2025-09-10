@@ -1,7 +1,7 @@
 {
-	"header": {
-		"1(home)": "1(página inicial)",
-		"2(something)": "2(alguma coisa)",
-		"3(contact)": "3(contato)"
-	}
+    "header": {
+        "1(home)": "1(página inicial)",
+        "2(something)": "2(alguma coisa)",
+        "3(contact)": "3(contato)"
+    }
 }
