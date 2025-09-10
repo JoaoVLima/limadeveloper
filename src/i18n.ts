@@ -21,7 +21,7 @@ i18n
         fallbackLng: 'en',
         load: 'languageOnly',
 
-        debug: false,
+        debug: true,
 
         ns: ['landing_page'],
         defaultNS: 'landing_page',
