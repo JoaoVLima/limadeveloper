@@ -1,4 +1,5 @@
 import { useTranslation } from 'react-i18next'
+import i18n from "../i18n.ts";
 
 type HeaderProps = {
     activeIndex: number // which li should be active (0, 1, 2...)
@@ -7,7 +8,13 @@ type HeaderProps = {
 function Header({ activeIndex }: HeaderProps) {
     const { t } = useTranslation('landing_page', { keyPrefix: 'header' })
     const menuItems = [t('1(home)'), t('2(something)'), t('3(contact)')]
-    const today = new Date().toLocaleDateString()
+    const today = new Date().toLocaleString(i18n.language, {
+        weekday: 'short',  // e.g., Mon, Tue
+        month: 'short',    // e.g., Jan, Feb
+        day: 'numeric',    // e.g., 10
+        hour: '2-digit',   // e.g., 08
+        minute: '2-digit', // e.g., 34
+    })
 
     return (
         <header className="sticky top-0 bg-black/50 z-50">
@@ -32,7 +39,7 @@ function Header({ activeIndex }: HeaderProps) {
                     ))}
 
                     {/* Date */}
-                    <li className="flex-shrink-0 py-1 px-4 rounded-md text-gray-400 ml-auto">
+                    <li className="flex-shrink-0 py-1 px-4 rounded-md text-gray-300 ml-auto">
                         {today}
                     </li>
                 </ul>
