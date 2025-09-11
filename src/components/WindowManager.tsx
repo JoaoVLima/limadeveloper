@@ -47,36 +47,50 @@ function WindowManager() {
     }, [])
 
     return (
-        <div className="container" ref={containerRef}>
-            <div className="slot top" data-swapy-slot="a">
-                <Window id="a" title={t("Window A")}>
-                    <p>This is the content of window A</p>
-                    <button className="bg-blue-500 text-white px-2 py-1 mt-2 rounded">Click Me</button>
+        <div className="container grid grid-rows-[1fr_2fr_1fr] grid-cols-2 gap-2 p-2" ref={containerRef} style={{height: '100vh'}}>
+
+            {/* Terminal window */}
+            <div className="slot top-left" data-swapy-slot="terminal">
+                <Window id="terminal" title={t("Terminal")} withHandle>
+                    <div className="bg-black text-green-400 font-mono p-2 h-40 overflow-y-auto">
+                        <p>$ echo "Hello World"</p>
+                        <p>Hello World</p>
+                        <p>$ ls</p>
+                        <p>file1.txt  file2.txt  script.js</p>
+                    </div>
                 </Window>
             </div>
 
-            <div className="middle flex gap-4">
-                <div className="slot middle-left" data-swapy-slot="b">
-                    <Window id="b" title={t("Window B")} withHandle>
-                        <ul className="list-disc pl-4">
-                            <li>Item 1</li>
-                            <li>Item 2</li>
-                            <li>Item 3</li>
-                        </ul>
-                    </Window>
-                </div>
-                <div className="slot middle-right" data-swapy-slot="c">
-                    <Window id="c" title={t("Window C")}>
-                        <p>Some text inside window C</p>
-                    </Window>
-                </div>
-            </div>
-
-            <div className="slot bottom" data-swapy-slot="d">
-                <Window id="d" title={t("Window D")}>
-                    <p>Window D content goes here</p>
+            {/* GitHub frame window */}
+            <div className="slot top-right" data-swapy-slot="github">
+                <Window id="github" title={t("GitHub Frame")} withHandle>
+                    <iframe
+                        src="https://github.com"
+                        className="w-full h-40 border"
+                        title="GitHub"
+                    />
                 </Window>
             </div>
+
+            {/* Regular window */}
+            <div className="slot bottom-left" data-swapy-slot="regular">
+                <Window id="regular" title={t("Notes")}>
+                    <p>This is a regular notes window</p>
+                    <ul className="list-disc pl-4">
+                        <li>Task 1</li>
+                        <li>Task 2</li>
+                        <li>Task 3</li>
+                    </ul>
+                </Window>
+            </div>
+
+            {/* Extra slot for flexibility */}
+            <div className="slot bottom-right" data-swapy-slot="extra">
+                <Window id="extra" title="Extra Window">
+                    <p>You can put any content here</p>
+                </Window>
+            </div>
+
         </div>
     )
 }
