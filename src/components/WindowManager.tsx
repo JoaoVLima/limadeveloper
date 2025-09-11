@@ -1,96 +1,92 @@
-import { useTranslation } from 'react-i18next'
-import { useEffect, useRef } from 'react'
-import type { Swapy } from 'swapy'
+import { useEffect, useMemo, useRef, useState } from 'react'
+import { type SlotItemMapArray, type Swapy, utils } from 'swapy'
 import { createSwapy } from 'swapy'
 import Window from './Window'
 
+type Item = {
+    id: string
+    title: string
+    content?: React.ReactNode
+    withHandle?: boolean
+}
+
+const initialItems: Item[] = [
+    { id: '1', title: 'Window 1', content: <p>Content 1</p>, withHandle: true },
+    { id: '2', title: 'Window 2', content: <p>Content 2</p>, withHandle: true },
+    { id: '3', title: 'Window 3', content: <p>Content 3</p>, withHandle: true },
+]
+
+let idCounter = 4
+
 function WindowManager() {
-    const { t } = useTranslation('landing_page', { keyPrefix: 'windowmanager' })
+    const [items, setItems] = useState<Item[]>(initialItems)
+    const [slotItemMap, setSlotItemMap] = useState<SlotItemMapArray>(
+        utils.initSlotItemMap(items, 'id')
+    )
+    const slottedItems = useMemo(
+        () => utils.toSlottedItems(items, 'id', slotItemMap),
+        [items, slotItemMap]
+    )
     const swapyRef = useRef<Swapy | null>(null)
     const containerRef = useRef<HTMLDivElement>(null)
 
+    // Keep Swapy dynamic when items change
+    useEffect(() => utils.dynamicSwapy(swapyRef.current, items, 'id', slotItemMap, setSlotItemMap), [items])
+
     useEffect(() => {
-        if (containerRef.current) {
-            swapyRef.current = createSwapy(containerRef.current, {
-                // animation: 'dynamic'
-                // swapMode: 'drop',
-                // autoScrollOnDrag: true,
-                // enabled: true,
-                // dragAxis: 'x',
-                // dragOnHold: true
-            })
+        swapyRef.current = createSwapy(containerRef.current!, {
+            manualSwap: true,
+            animation: 'dynamic',
+        })
 
-            // swapyRef.current.enable(false)
-            // swapyRef.current.destroy()
-            // console.log(swapyRef.current.slotItemMap())
+        swapyRef.current.onSwap((event) => {
+            setSlotItemMap(event.newSlotItemMap.asArray)
+        })
 
-            swapyRef.current.onBeforeSwap((event) => {
-                console.log('beforeSwap', event)
-                // This is for dynamically enabling and disabling swapping.
-                // Return true to allow swapping, and return false to prevent swapping.
-                return true
-            })
-
-            swapyRef.current.onSwapStart((event) => {
-                console.log('start', event);
-            })
-            swapyRef.current.onSwap((event) => {
-                console.log('swap', event);
-            })
-            swapyRef.current.onSwapEnd((event) => {
-                console.log('end', event);
-            })
-        }
-        return () => {
-            swapyRef.current?.destroy()
-        }
+        return () => swapyRef.current?.destroy()
     }, [])
 
+    const handleClose = (id: string) => {
+        setItems((prev) => prev.filter((i) => i.id !== id))
+    }
+
+    const addWindow = () => {
+        const newItem: Item = {
+            id: `${idCounter}`,
+            title: `Window ${idCounter}`,
+            content: <p>New window content {idCounter}</p>,
+            withHandle: true,
+        }
+        setItems([...items, newItem])
+        idCounter++
+    }
+
     return (
-        <div className="container grid grid-rows-[1fr_2fr_1fr] grid-cols-2 gap-2 p-2" ref={containerRef} style={{height: '100vh'}}>
-
-            {/* Terminal window */}
-            <div className="slot top-left" data-swapy-slot="terminal">
-                <Window id="terminal" title={t("Terminal")} withHandle>
-                    <div className="bg-black text-green-400 font-mono p-2 h-40 overflow-y-auto">
-                        <p>$ echo "Hello World"</p>
-                        <p>Hello World</p>
-                        <p>$ ls</p>
-                        <p>file1.txt  file2.txt  script.js</p>
+        <div className="container" ref={containerRef}>
+            <div className="items">
+                {slottedItems.map(({ slotId, itemId, item }) => (
+                    <div className="slot" key={slotId} data-swapy-slot={slotId}>
+                        {item && (
+                            <Window
+                                id={itemId}
+                                title={item.title}
+                                withHandle={item.withHandle}
+                                onClose={handleClose}
+                            >
+                                {item.content ?? <p>Empty content</p>}
+                            </Window>
+                        )}
                     </div>
-                </Window>
+                ))}
             </div>
 
-            {/* GitHub frame window */}
-            <div className="slot top-right" data-swapy-slot="github">
-                <Window id="github" title={t("GitHub Frame")} withHandle>
-                    <iframe
-                        src="https://github.com"
-                        className="w-full h-40 border"
-                        title="GitHub"
-                    />
-                </Window>
+            {/* Add new window button */}
+            <div
+                className="item item--add border rounded shadow-md p-2 m-2 bg-gray-700 text-white cursor-pointer flex justify-center items-center"
+                onClick={addWindow}
+            >
+                +
             </div>
-
-            {/* Regular window */}
-            <div className="slot bottom-left" data-swapy-slot="regular">
-                <Window id="regular" title={t("Notes")}>
-                    <p>This is a regular notes window</p>
-                    <ul className="list-disc pl-4">
-                        <li>Task 1</li>
-                        <li>Task 2</li>
-                        <li>Task 3</li>
-                    </ul>
-                </Window>
-            </div>
-
-            {/* Extra slot for flexibility */}
-            <div className="slot bottom-right" data-swapy-slot="extra">
-                <Window id="extra" title="Extra Window">
-                    <p>You can put any content here</p>
-                </Window>
-            </div>
-
         </div>
     )
 }
