@@ -1,5 +1,5 @@
 import { type ReactNode, useEffect, useMemo, useRef, useState } from 'react'
-import { type SlotItemMapArray, type Swapy, utils } from 'swapy'
+import {type AnimationType, type SlotItemMapArray, type Swapy, utils} from 'swapy'
 import { createSwapy } from 'swapy'
 
 type Item = {
@@ -29,7 +29,14 @@ function WindowManager() {
 
     useEffect(() => {
         swapyRef.current = createSwapy(containerRef.current!, {
+            animation: 'dynamic',
+            enabled: true,
+            swapMode: 'hover',
+            dragOnHold: false,
+            autoScrollOnDrag: false,
+            dragAxis: 'both',
             manualSwap: true,
+
         })
 
         swapyRef.current.onSwap((event) => {
@@ -65,7 +72,7 @@ function WindowManager() {
                                     className="absolute right-5 top-2.5 h-[38px] w-[38px] rounded-full bg-[hsl(244.5,57.9%,45.6%)] bg-[url('./delete.svg')] bg-[length:22px_22px] bg-center bg-no-repeat cursor-pointer hover:bg-[hsl(244.5,57.9%,40.6%)]"
                                     data-swapy-no-drag
                                     onClick={() => {
-                                        handleClose()
+                                        handleClose(itemId)
                                     }}
                                 ></span>
                             </div>
