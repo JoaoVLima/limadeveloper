@@ -7,3 +7,10 @@ Vou comecar a dar aula e preciso de um ambiente para mostrar as atividades para 
 
 
 sem saco pra fazer um readme bonitinho e nao me importo tbm, ninguem le isso aqui mesmo
+
+Como eu vou fazer pra hostear isso no google de graca(a principio):
+https://chatgpt.com/share/68f2790a-8bcc-8011-94d8-b612d79b56d9
+
+sim, eu uso chatgpt.
+eu nao sou pior que vc por isso.
+mas eu tbm nao me orgulho 100% de usar ele.
